@@ -7,7 +7,7 @@
 Icon
 
 #private creds
-config.py
+vip_feed_builder/config.py
 
 # Thumbnails
 ._*
