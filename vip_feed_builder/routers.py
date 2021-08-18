@@ -27,10 +27,7 @@ class VipVersionRouter:
         return(databases[model._meta.app_label]['NAME'])
 
     def allow_migrate(self, db, app_label, model_name=None, **hints):
-        print(db, app_label)
-        if app_label == 'vip6':
-            return db == 'vip6'
-        elif app_label == 'vip52':
-            return db == 'vip52'
-        else:
-            return(False)
+        if app_label in ['vip52','vip6']:
+            #print(app_label, databases[app_label]['NAME'])
+            return db == databases[app_label]['NAME']
+        return(False)
